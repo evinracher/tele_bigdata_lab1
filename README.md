@@ -33,23 +33,27 @@ Ejecutar:
 python average_salary_se.py dataempleados.csv
 </pre>
 La salida es una lista, donde cada elemento tiene el formato:
-> "<identificador del sector>" <salario promedio>
-
+<pre>
+"identificador_sector"  salario_promedio
+</pre>
 ### 2. El salario promedio por Empleado
 Ejecutar:
 <pre>
 python average_salary_emp.py dataempleados.csv
 </pre>
 La salidad es una lista, donde cada elemento tiene el formato:
-> "<identificador del empleado>" <salario promedio>
-
+<pre>
+"identificador_empleado"  salario_promedio
+</pre>
 ### 3. Número de SE por Empleado que ha tenido a lo largo de la estadística
 Ejecutar:
 <pre>
 python se_by_emp.py dataempleados.csv
 </pre>
 La salidad es una lista, donde cada elemento tiene el formato:
-'<identificador del empleado" [<identificador sector>, ... ]'
+<pre>
+identificador_empleado  [ identificador_sector, ... ]
+</pre>
 
 Acá es de notar que el segundo elmento de la pareja es una lista, con todos los sectores en los que el empleado ha estado laborando durante el periodo de muestreo.
   
@@ -57,9 +61,9 @@ Acá es de notar que el segundo elmento de la pareja es una lista, con todos los
 
 Para ejecutar en EMR se utilizó la librería: boto3, que permite conectar con s3 para extraer de alli los datos. Se sigue comando para ejecutar:
 
-> python <programa> -c mrjob.conf -r emr s3://kaparrahdatasets/datasets/otros/dataempleados.csv
+<pre>python programa -c mrjob.conf -r emr s3://kaparrahdatasets/datasets/otros/dataempleados.csv</pre>
 
-Donde programa puede ser cualquiera de los siguientes:
+Donde **programa** puede ser cualquiera de los siguientes:
 <pre>
 - average_salary_emp.py
 - average_salary_se.py

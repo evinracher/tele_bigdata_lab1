@@ -13,7 +13,7 @@ idemp,sececon,salary,year
 1115,3432,34000,1980
 3233,1234,40000,1965
 1115,1212,77000,1980
-1115,1412,76000,1981
+1115,1412,76000,1981s3://kaparrahdatasets/datasets/otros/dataempleados.csv
 1116,1412,76000,1982
 </pre>
 
@@ -59,9 +59,9 @@ Acá es de notar que el segundo elmento de la pareja es una lista, con todos los
   
 ## Ejecutar en EMR
 
-Para ejecutar en EMR se utilizó la librería: boto3, que permite conectar con s3 para extraer de alli los datos. Se sigue comando para ejecutar:
+Para ejecutar en EMR se utilizó la librería: boto3, que permite conectar con s3 para extraer de allí los datos a procesar y guardar la salida. Se sigue comando para ejecutar:
 
-<pre>python programa -c mrjob.conf -r emr s3://kaparrahdatasets/datasets/otros/dataempleados.csv</pre>
+<pre>python programa -c mrjob.conf -r emr s3://kaparrahdatasets/datasets/otros/dataempleados.csv --output-dir s3://kaparrahdatasets/datasets/otros/output_avg_sal_se.txt</pre>
 
 Donde **programa** puede ser cualquiera de los siguientes:
 <pre>
